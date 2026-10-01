@@ -1,0 +1,44 @@
+/**
+ * Cookaloo "Linne" color tokens.
+ * Used for non-NativeWind contexts (e.g., tab bar, status bar, native components).
+ * NativeWind classes reference CSS variables defined in global.css.
+ */
+
+export const Colors = {
+  light: {
+    bg: '#F6F1E9',
+    surface: '#FFFDF9',
+    surface2: '#EFE7DC',
+    line: '#E6DCCF',
+    line2: '#DCCFBF',
+    ink: '#2A211B',
+    muted: '#6E6259',
+    acc: '#B4472A',
+    accInk: '#FFFFFF',
+    accSoft: '#F4E1D7',
+    accText: '#8A3218',
+    herb: '#2F6A43',
+    herbSoft: '#E1EDE3',
+    herbText: '#24573A',
+    warnSoft: '#FBEFD9',
+    warnText: '#7A4E0C',
+  },
+  dark: {
+    bg: '#1A1613',
+    surface: '#25201C',
+    surface2: '#302924',
+    line: '#3A322B',
+    line2: '#4A3F36',
+    ink: '#F3EBE1',
+    muted: '#B5A899',
+    acc: '#E07A55',
+    accInk: '#1A1613',
+    accSoft: '#3D261E',
+    accText: '#E07A55',
+    herb: '#86C79A',
+    herbSoft: '#1E2E22',
+    herbText: '#86C79A',
+    warnSoft: '#342A18',
+    warnText: '#D4A94E',
+  },
+} as const;

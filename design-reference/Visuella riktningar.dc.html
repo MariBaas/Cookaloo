@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet data-dc-atomics><meta name="design_doc_mode" content="canvas"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&amp;family=Figtree:wght@400;500;600;700&amp;family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&amp;family=Hanken+Grotesk:wght@400;500;600;700&amp;family=Young+Serif&amp;family=Manrope:wght@400;500;600;700&amp;display=swap"><style>body{margin:0;background:#ECE9E3;font-family:system-ui,sans-serif}a{color:#8A3218}a:hover{color:#5E2210}.dv-turn{padding:40px 44px 32px;border-bottom:1px solid rgba(0,0,0,.08);scroll-margin-top:16px}.dv-thd{display:flex;align-items:baseline;gap:10px;margin:0 0 12px}.dv-tid{font:600 10px ui-monospace,Menlo,monospace;padding:3px 7px;background:#1a1a1a;color:#fff;border-radius:4px;text-decoration:none}.dv-tname{font:600 13px/1.2 system-ui,sans-serif;color:#1a1a1a}.dv-opts{display:flex;flex-direction:column;gap:64px;align-items:flex-start}.dv-opt{flex:none;display:flex;flex-direction:column;gap:14px;scroll-margin-top:16px}.dv-oid{font:600 10.5px ui-monospace,Menlo,monospace;padding:3px 7px;background:rgba(0,0,0,.08);color:#1a1a1a;border-radius:5px;text-decoration:none}.dv-olabel{display:flex;align-items:baseline;gap:8px;font:400 13px/1.3 system-ui,sans-serif;color:rgba(0,0,0,.6)}.dv-olabel b{color:#1a1a1a;font-weight:600}.dv-opt:target .dv-oid{background:#2a78d6;color:#fff}.dv-next{margin:40px 0 0;font:12px/1.5 system-ui,sans-serif;color:rgba(0,0,0,.5)}button{font:inherit;cursor:pointer}select{font:inherit}</style></helmet>
+<section class="dv-turn" id="t1">
+<div class="dv-thd"><a class="dv-tid" href="#t1">1</a><span class="dv-tname">Tre visuella riktningar – biblioteket, receptvyn och en komponentöversikt</span></div>
+<p style="margin:0 0 36px;max-width:760px;font:14px/1.55 system-ui,sans-serif;color:rgba(0,0,0,.62);text-wrap:pretty">Samma innehåll i alla tre riktningarna, så att bara stilen skiljer dem åt. Receptvyerna är klickbara: portioner räknar om mängderna, måttsystemet räknar om enheterna (≈ markerar ungefärliga omräkningar från volym till vikt), och du kan sätta betyg, slå på Provat och trycka på "Vi lagade den idag". Toast Skagen visar hur ett recept utan foto ser ut. Bilderna är lånade stockfoton som bara står där tills vidare.</p>
+<div class="dv-opts">
+
+<div class="dv-opt" id="1a">
+<div class="dv-olabel"><a class="dv-oid" href="#1a">1a</a><b>Linne</b> – varm gräddvit bas, terrakotta som accentfärg, serif (Newsreader) i rubrikerna och Figtree i resten. Lugn och tidningsaktig.</div>
+<div style="display:flex;gap:40px;align-items:flex-start;flex-wrap:wrap">
+
+<x-import component-from-global-scope="IOSDevice" from="./ios-frame.jsx" hint-size="402px,874px">
+<div style="position:relative;height:100%;background:#F6F1E9;font-family:Figtree,sans-serif;color:#2A211B">
+<div style="position:absolute;inset:0;overflow:auto;padding:62px 0 120px">
+<div style="padding:0 20px;display:flex;justify-content:space-between;align-items:flex-end">
+<div><div style="font-size:14px;color:#6E6259;font-weight:500">Familjen Baard</div><div style="font-family:Newsreader,serif;font-size:36px;font-weight:500;line-height:1.1;letter-spacing:-.01em">Recept</div></div>
+<div style="width:44px;height:44px;border-radius:22px;background:#E9DFD2;display:flex;align-items:center;justify-content:center;font-weight:600;font-size:15px">M</div>
+</div>
+<div style="margin:18px 20px 0;height:50px;border-radius:25px;background:#FFFDF9;border:1px solid #E6DCCF;display:flex;align-items:center;gap:10px;padding:0 16px;color:#6E6259;font-size:16px"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg>Sök titel, ingrediens eller tagg</div>
+<div style="display:flex;gap:8px;overflow:auto;padding:16px 20px 4px;scrollbar-width:none">
+<span style="flex:none;height:40px;padding:0 18px;border-radius:20px;background:#2A211B;color:#F6F1E9;display:flex;align-items:center;font-size:15px;font-weight:600">Alla</span>
+<span style="flex:none;height:40px;padding:0 18px;border-radius:20px;border:1px solid #DCCFBF;display:flex;align-items:center;font-size:15px;font-weight:500">Huvudrätt</span>
+<span style="flex:none;height:40px;padding:0 18px;border-radius:20px;border:1px solid #DCCFBF;display:flex;align-items:center;font-size:15px;font-weight:500">Efterrätt</span>
+<span style="flex:none;height:40px;padding:0 18px;border-radius:20px;border:1px solid #DCCFBF;display:flex;align-items:center;font-size:15px;font-weight:500">Förrätt</span>
+<span style="flex:none;height:40px;padding:0 18px;border-radius:20px;border:1px solid #DCCFBF;display:flex;align-items:center;font-size:15px;font-weight:500">Frukost</span>
+<span style="flex:none;height:40px;padding:0 18px;border-radius:20px;border:1px solid #DCCFBF;display:flex;align-items:center;font-size:15px;font-weight:500">Bakning</span>
+</div>
+<div style="display:flex;justify-content:space-between;align-items:center;padding:10px 20px 6px;font-size:15px">
+<span style="color:#6E6259">24 recept</span>
+<div style="display:flex;gap:6px"><span style="height:44px;padding:0 12px;display:flex;align-items:center;gap:6px;font-weight:600">Nyast<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="m6 9 6 6 6-6"></path></svg></span><span style="height:44px;padding:0 12px;display:flex;align-items:center;gap:6px;font-weight:600"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 7h10M18 7h2M4 17h4M12 17h8"></path><circle cx="16" cy="7" r="2"></circle><circle cx="10" cy="17" r="2"></circle></svg>Filter</span></div>
+</div>
+<div style="display:flex;flex-direction:column;gap:18px;padding:6px 20px 0">
+<sc-for list="{{ recipes }}" as="r" hint-placeholder-count="3">
+<div style="background:#FFFDF9;border-radius:22px;overflow:hidden;box-shadow:0 1px 2px rgba(42,33,27,.06),0 10px 28px rgba(42,33,27,.06)">
+<div style="position:relative;aspect-ratio:16/10;background:#EFE5D8">
+<sc-if value="{{ r.hasImg }}" hint-placeholder-val="{{ true }}"><img src="{{ r.img }}" alt="" style="width:100%;height:100%;object-fit:cover;display:block"></sc-if>
+<sc-if value="{{ r.noImg }}" hint-placeholder-val="{{ false }}"><div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:#EFE5D8;background-image:radial-gradient(circle at 50% 50%,#F6EEE3 0,#EFE5D8 70%)"><div style="width:120px;height:120px;border-radius:60px;border:1.5px solid #CDB9A3;display:flex;align-items:center;justify-content:center;font-family:Newsreader,serif;font-size:44px;color:#9C7B5E;font-style:italic">{{ r.initials }}</div></div></sc-if>
+<sc-if value="{{ r.tried }}" hint-placeholder-val="{{ true }}"><span style="position:absolute;top:12px;left:12px;height:28px;padding:0 10px;border-radius:14px;background:rgba(255,253,249,.94);display:flex;align-items:center;gap:5px;font-size:13px;font-weight:600;color:#2F6A43"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-10"></path></svg>Provat</span></sc-if>
+</div>
+<div style="padding:14px 18px 18px">
+<div style="font-size:14px;color:#6E6259;font-weight:500;display:flex;gap:6px;align-items:center">{{ r.cat }}<span>·</span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg>{{ r.time }}</div>
+<div style="font-family:Newsreader,serif;font-size:23px;font-weight:500;line-height:1.2;margin-top:4px;text-wrap:pretty">{{ r.t }}</div>
+<div style="display:flex;justify-content:space-between;align-items:center;margin-top:10px;font-size:14px"><span style="display:flex;align-items:center;gap:5px;font-weight:600"><svg width="16" height="16" viewBox="0 0 24 24" fill="#B4472A"><path d="M12 3.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8-5.2-2.7-5.2 2.7 1-5.8L3.5 9.7l5.9-.9z"></path></svg>{{ r.avg }}</span><span style="color:#6E6259">{{ r.last }}</span></div>
+</div>
+</div>
+</sc-for>
+</div>
+</div>
+<div style="position:absolute;left:0;right:0;bottom:0;height:88px;background:rgba(255,253,249,.96);border-top:1px solid #E6DCCF;display:grid;grid-template-columns:repeat(4,1fr);align-items:start;padding-top:8px;font-size:12px;font-weight:600;color:#6E6259">
+<div style="display:flex;flex-direction:column;align-items:center;gap:3px;color:#B4472A"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4.5A1.5 1.5 0 0 1 6.5 3H19v15H6.5A1.5 1.5 0 0 0 5 19.5z"></path><path d="M5 19.5A1.5 1.5 0 0 0 6.5 21H19"></path></svg>Recept</div>
+<div style="display:flex;flex-direction:column;align-items:center;gap:3px;color:#2A211B"><div style="width:52px;height:52px;margin-top:-22px;border-radius:26px;background:#B4472A;color:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 16px rgba(180,71,42,.35)"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M12 5v14M5 12h14"></path></svg></div>Importera</div>
+<div style="display:flex;flex-direction:column;align-items:center;gap:3px"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10 6h10M10 12h10M10 18h10"></path><path d="m3.5 6 1.2 1.2L7 5M3.5 12l1.2 1.2L7 11M3.5 18l1.2 1.2L7 17"></path></svg>Inköpslista</div>
+<div style="display:flex;flex-direction:column;align-items:center;gap:3px"><svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><circle cx="5" cy="12" r="1.8"></circle><circle cx="12" cy="12" r="1.8"></circle><circle cx="19" cy="12" r="1.8"></circle></svg>Mer</div>
+</div>
+</div>
+</x-import>
+
+<x-import component-from-global-scope="IOSDevice" from="./ios-frame.jsx" hint-size="402px,874px">
+<div style="position:relative;height:100%;background:#F6F1E9;font-family:Figtree,sans-serif;color:#2A211B">
+<div style="position:absolute;inset:0;overflow:auto;padding-bottom:110px">
+<div style="position:relative;height:330px;background:#EFE5D8">
+<img src="https://images.unsplash.com/photo-1473093295043-cdd812d0e601?w=900&amp;q=70&amp;auto=format&amp;fit=crop" alt="" style="width:100%;height:100%;object-fit:cover;display:block">
+<div style="position:absolute;top:58px;left:16px;right:16px;display:flex;justify-content:space-between">
+<span style="width:44px;height:44px;border-radius:22px;background:rgba(255,253,249,.92);display:flex;align-items:center;justify-content:center"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2A211B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"></path></svg></span>
+<span style="width:44px;height:44px;border-radius:22px;background:rgba(255,253,249,.92);display:flex;align-items:center;justify-content:center"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2A211B" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M8 7l4-4 4 4"></path><path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-7"></path></svg></span>
+</div>
+</div>
+<div style="position:relative;margin-top:-28px;background:#F6F1E9;border-radius:28px 28px 0 0;padding:24px 20px 0">
+<div style="display:flex;flex-wrap:wrap;gap:6px"><span style="height:30px;padding:0 12px;border-radius:15px;background:#F1DDD3;color:#8A3218;font-size:14px;font-weight:600;display:flex;align-items:center">Huvudrätt</span><span style="height:30px;padding:0 12px;border-radius:15px;border:1px solid #DCCFBF;font-size:14px;font-weight:500;display:flex;align-items:center">Kyckling</span><span style="height:30px;padding:0 12px;border-radius:15px;border:1px solid #DCCFBF;font-size:14px;font-weight:500;display:flex;align-items:center">Vardag</span><span style="height:30px;padding:0 12px;border-radius:15px;border:1px solid #DCCFBF;font-size:14px;font-weight:500;display:flex;align-items:center">Barnvänligt</span></div>
+<h1 style="font-family:Newsreader,serif;font-size:33px;font-weight:500;line-height:1.1;letter-spacing:-.01em;margin:14px 0 8px;text-wrap:pretty">Pasta med kyckling och soltorkade tomater</h1>
+<div style="display:flex;align-items:center;gap:6px;font-size:15px;color:#6E6259"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1"></path><path d="M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"></path></svg>Från: <span style="text-decoration:underline;text-underline-offset:3px">smakrikt.se</span></div>
+<div style="display:grid;grid-template-columns:repeat(3,1fr);margin-top:20px;border-top:1px solid #E3D8CA;border-bottom:1px solid #E3D8CA;padding:14px 0">
+<div><div style="font-size:13px;color:#6E6259">Förberedelse</div><div style="font-size:19px;font-weight:600;margin-top:2px">10 min</div></div>
+<div style="border-left:1px solid #E3D8CA;padding-left:14px"><div style="font-size:13px;color:#6E6259">Tillagning</div><div style="font-size:19px;font-weight:600;margin-top:2px">25 min</div></div>
+<div style="border-left:1px solid #E3D8CA;padding-left:14px"><div style="font-size:13px;color:#6E6259">Totalt</div><div style="font-size:19px;font-weight:600;margin-top:2px">35 min</div></div>
+</div>
+<div style="display:flex;justify-content:space-between;align-items:center;margin-top:26px">
+<h2 style="font-family:Newsreader,serif;font-size:26px;font-weight:500;margin:0">Ingredienser</h2>
+<div style="position:relative;height:44px;padding:0 14px 0 16px;border-radius:22px;background:#FFFDF9;border:1px solid #DCCFBF;display:flex;align-items:center;gap:6px;font-size:16px;font-weight:600">{{ a.srvLabel }}<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="m6 9 6 6 6-6"></path></svg><select value="{{ a.srv }}" onChange="{{ a.onSrv }}" style="position:absolute;inset:0;opacity:0;width:100%"><sc-for list="{{ srvOpts }}" as="o"><option value="{{ o.v }}">{{ o.label }}</option></sc-for></select></div>
+</div>
+<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:4px;padding:4px;margin-top:14px;border-radius:24px;background:#EDE4D8">
+<sc-for list="{{ a.units }}" as="u" hint-placeholder-count="3"><button onClick="{{ u.pick }}" style="height:40px;border:0;border-radius:20px;background:{{ u.bg }};color:{{ u.fg }};font-size:15px;font-weight:600">{{ u.label }}</button></sc-for>
+</div>
+<sc-for list="{{ a.groups }}" as="g" hint-placeholder-count="2">
+<div style="margin-top:16px">
+<sc-if value="{{ g.hasTitle }}"><div style="font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#8A3218;padding:8px 0 4px">{{ g.title }}</div></sc-if>
+<sc-for list="{{ g.items }}" as="i" hint-placeholder-count="4">
+<div style="display:grid;grid-template-columns:100px 1fr;gap:12px;padding:12px 0;border-bottom:1px dashed #DCCFBF;font-size:17px;line-height:1.35">
+<div style="font-weight:700;display:flex;gap:4px;align-items:baseline"><sc-if value="{{ i.approx }}"><span title="Ungefärlig omräkning: vikten per dl varierar med hur ingrediensen är riven eller packad." style="color:#8A3218;cursor:help;border-bottom:1px dotted #8A3218">≈</span></sc-if>{{ i.qty }} {{ i.unit }}</div>
+<div>{{ i.name }}<sc-if value="{{ i.hasNote }}"><span style="color:#6E6259">, {{ i.note }}</span></sc-if></div>
+</div>
+</sc-for>
+</div>
+</sc-for>
+<h2 style="font-family:Newsreader,serif;font-size:26px;font-weight:500;margin:32px 0 6px">Gör så här</h2>
+<sc-for list="{{ steps }}" as="s" hint-placeholder-count="4">
+<div style="display:grid;grid-template-columns:40px 1fr;gap:14px;padding:16px 0;border-bottom:1px solid #E3D8CA">
+<div style="width:38px;height:38px;border-radius:19px;border:1.5px solid #B4472A;color:#B4472A;display:flex;align-items:center;justify-content:center;font-family:Newsreader,serif;font-size:20px;font-weight:500">{{ s.n }}</div>
+<div style="font-size:18px;line-height:1.5;text-wrap:pretty">{{ s.t }}</div>
+</div>
+</sc-for>
+<div style="margin:30px 0 24px;background:#FFFDF9;border-radius:22px;padding:20px;box-shadow:0 1px 2px rgba(42,33,27,.06)">
+<div style="display:flex;justify-content:space-between;align-items:flex-start">
+<div><div style="font-family:Newsreader,serif;font-size:24px;font-weight:500">Familjen Baard</div><div style="font-size:14px;color:#6E6259;margin-top:2px">{{ a.countLabel }} · {{ a.lastLabel }}</div></div>
+<div style="text-align:right"><div style="font-family:Newsreader,serif;font-size:32px;font-weight:500;line-height:1">{{ a.avg }}</div><div style="font-size:13px;color:#6E6259">snitt</div></div>
+</div>
+<div style="margin-top:18px;font-size:15px;font-weight:600">Ditt betyg</div>
+<div style="display:flex;gap:2px;margin:4px 0 0 -6px"><sc-for list="{{ a.stars }}" as="st" hint-placeholder-count="5"><button onClick="{{ st.pick }}" style="width:48px;height:48px;border:0;background:none;padding:0;display:flex;align-items:center;justify-content:center;color:{{ st.color }}"><svg width="34" height="34" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8-5.2-2.7-5.2 2.7 1-5.8L3.5 9.7l5.9-.9z"></path></svg></button></sc-for></div>
+<div style="display:flex;justify-content:space-between;align-items:center;padding:14px 0;margin-top:6px;border-top:1px solid #EDE4D8;border-bottom:1px solid #EDE4D8"><span style="font-size:17px;font-weight:600">Provat</span><button onClick="{{ a.toggleTried }}" style="position:relative;width:52px;height:32px;border:0;border-radius:16px;background:{{ a.trackBg }};padding:0;transition:background .2s"><span style="position:absolute;top:3px;left:3px;width:26px;height:26px;border-radius:13px;background:#fff;box-shadow:0 1px 3px rgba(0,0,0,.2);transform:translateX({{ a.knobX }});transition:transform .2s"></span></button></div>
+<button onClick="{{ a.cooked }}" style="margin-top:16px;width:100%;height:52px;border-radius:26px;border:1.5px solid #2A211B;background:transparent;color:#2A211B;font-size:17px;font-weight:600;display:flex;align-items:center;justify-content:center;gap:8px"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-10"></path></svg>Vi lagade den idag</button>
+<div style="margin-top:18px;display:flex;flex-direction:column">
+<sc-for list="{{ a.members }}" as="m" hint-placeholder-count="4"><div style="display:flex;align-items:center;gap:12px;padding:8px 0"><span style="width:36px;height:36px;border-radius:18px;background:#E9DFD2;display:flex;align-items:center;justify-content:center;font-weight:600;font-size:14px">{{ m.init }}</span><span style="flex:1;font-size:16px">{{ m.name }}</span><span style="font-size:17px;letter-spacing:1px"><span style="color:#B4472A">{{ m.full }}</span><span style="color:#DCCFBF">{{ m.empty }}</span></span></div></sc-for>
+</div>
+<div style="margin-top:14px;font-size:15px;font-weight:600">Din anteckning</div>
+<div style="margin-top:6px;padding:12px 14px;border-radius:14px;background:#F6F1E9;font-size:16px;line-height:1.45;color:#2A211B">Dubbla vitlöken. Barnen vill ha mer sås, ta 4 dl grädde.</div>
+</div>
+</div>
+</div>
+<div style="position:absolute;left:0;right:0;bottom:0;padding:12px 16px 30px;background:rgba(246,241,233,.97);border-top:1px solid #E3D8CA;display:flex;gap:10px">
+<span style="width:52px;height:52px;flex:none;border-radius:26px;border:1px solid #DCCFBF;display:flex;align-items:center;justify-content:center"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2A211B" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20h4L19 9l-4-4L4 16z"></path></svg></span>
+<span style="flex:1;height:52px;border-radius:26px;background:#B4472A;color:#fff;display:flex;align-items:center;justify-content:center;gap:8px;font-size:17px;font-weight:600"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 8h14l-1 12H6z"></path><path d="M9 8V6a3 3 0 0 1 6 0v2"></path></svg>Lägg till i inköpslista</span>
+</div>
+<sc-if value="{{ a.toast }}"><div style="position:absolute;left:20px;right:20px;bottom:106px;padding:14px 18px;border-radius:16px;background:#2A211B;color:#F6F1E9;font-size:15px;font-weight:500;display:flex;align-items:center;gap:10px;box-shadow:0 10px 30px rgba(0,0,0,.2)"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#9FD3AE" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-10"></path></svg>Loggat: lagad idag</div></sc-if>
+</div>
+</x-import>
+
+<div style="width:640px;background:#FFFDF9;border-radius:20px;padding:32px;font-family:Figtree,sans-serif;color:#2A211B;display:flex;flex-direction:column;gap:28px;box-shadow:0 1px 3px rgba(0,0,0,.06)">
+<div style="font-family:Newsreader,serif;font-size:30px;font-weight:500">Linne – komponenter</div>
+<div><div style="font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#6E6259;margin-bottom:10px">Färger · ljust / mörkt</div>
+<div style="display:grid;grid-template-columns:repeat(8,1fr);gap:8px;font-size:11px;color:#6E6259">
+<div><div style="height:48px;border-radius:10px;background:#F6F1E9;border:1px solid #E3D8CA"></div>Bas</div><div><div style="height:48px;border-radius:10px;background:#FFFDF9;border:1px solid #E3D8CA"></div>Yta</div><div><div style="height:48px;border-radius:10px;background:#2A211B"></div>Bläck</div><div><div style="height:48px;border-radius:10px;background:#6E6259"></div>Dämpad</div><div><div style="height:48px;border-radius:10px;background:#B4472A"></div>Terrakotta</div><div><div style="height:48px;border-radius:10px;background:#2F6A43"></div>Klar</div><div><div style="height:48px;border-radius:10px;background:#A8660F"></div>Varning</div><div><div style="height:48px;border-radius:10px;background:#B3261E"></div>Fel</div>
+<div><div style="height:32px;border-radius:8px;background:#1C1815"></div></div><div><div style="height:32px;border-radius:8px;background:#26211D"></div></div><div><div style="height:32px;border-radius:8px;background:#F3EBE1"></div></div><div><div style="height:32px;border-radius:8px;background:#B2A597"></div></div><div><div style="height:32px;border-radius:8px;background:#E07A55"></div></div><div><div style="height:32px;border-radius:8px;background:#7CC08F"></div></div><div><div style="height:32px;border-radius:8px;background:#E3A94B"></div></div><div><div style="height:32px;border-radius:8px;background:#F08A80"></div></div>
+</div></div>
+<div><div style="font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#6E6259;margin-bottom:10px">Typografi</div>
+<div style="display:flex;flex-direction:column;gap:6px"><div style="font-family:Newsreader,serif;font-size:36px;font-weight:500;line-height:1.1">Laxpudding <span style="font-family:Figtree;font-size:12px;color:#6E6259;font-weight:500">Newsreader 36</span></div><div style="font-family:Newsreader,serif;font-size:26px;font-weight:500">Ingredienser <span style="font-family:Figtree;font-size:12px;color:#6E6259;font-weight:500">Newsreader 26</span></div><div style="font-size:18px;line-height:1.5">Stekt lök ger sötma åt grytan. <span style="font-size:12px;color:#6E6259">Figtree 18 steg</span></div><div style="font-size:16px">Brödtext och ingredienser <span style="font-size:12px;color:#6E6259">Figtree 16–17</span></div><div style="font-size:13px;font-weight:600;color:#6E6259">Etikett 13 · halvfet</div></div></div>
+<div><div style="font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#6E6259;margin-bottom:10px">Chips, taggar, märken, betyg</div>
+<div style="display:flex;flex-wrap:wrap;gap:8px;align-items:center"><span style="height:40px;padding:0 18px;border-radius:20px;background:#2A211B;color:#F6F1E9;display:flex;align-items:center;font-size:15px;font-weight:600">Alla</span><span style="height:40px;padding:0 18px;border-radius:20px;border:1px solid #DCCFBF;display:flex;align-items:center;font-size:15px;font-weight:500">Efterrätt</span><span style="height:30px;padding:0 12px;border-radius:15px;background:#F1DDD3;color:#8A3218;font-size:14px;font-weight:600;display:flex;align-items:center">Huvudrätt</span><span style="height:30px;padding:0 12px;border-radius:15px;border:1px solid #DCCFBF;font-size:14px;display:flex;align-items:center">Vegetariskt</span><span style="height:28px;padding:0 10px;border-radius:14px;background:#E3EFE5;display:flex;align-items:center;gap:5px;font-size:13px;font-weight:600;color:#2F6A43">✓ Provat</span><span style="height:26px;padding:0 9px;border-radius:13px;background:#F4ECDF;color:#7A5A2E;font-size:12px;font-weight:600;display:flex;align-items:center;gap:4px"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3c.5 4 2 5.5 6 6-4 .5-5.5 2-6 6-.5-4-2-5.5-6-6 4-.5 5.5-2 6-6z"></path></svg>AI-uppskattat</span><span style="font-size:22px;letter-spacing:2px"><span style="color:#B4472A">★★★★</span><span style="color:#DCCFBF">★</span></span></div></div>
+<div><div style="font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#6E6259;margin-bottom:10px">Rader</div>
+<div style="display:grid;grid-template-columns:100px 1fr;gap:12px;padding:12px 0;border-bottom:1px dashed #DCCFBF;font-size:17px"><b>≈ 40 g</b><span>riven parmesan</span></div>
+<div style="display:grid;grid-template-columns:40px 1fr;gap:14px;padding:14px 0;border-bottom:1px solid #E3D8CA"><div style="width:38px;height:38px;border-radius:19px;border:1.5px solid #B4472A;color:#B4472A;display:flex;align-items:center;justify-content:center;font-family:Newsreader,serif;font-size:20px">2</div><div style="font-size:18px;line-height:1.5">Bryn kycklingen i olivolja, ca 6–8 minuter.</div></div>
+<div style="display:flex;align-items:center;gap:14px;padding:12px 0;border-bottom:1px solid #E3D8CA;font-size:17px"><span style="width:28px;height:28px;border-radius:8px;border:2px solid #CDBFAE"></span><span style="flex:1"><b>3 dl</b> grädde</span><span style="font-size:13px;color:#6E6259">2 recept</span></div>
+<div style="display:flex;align-items:center;gap:14px;padding:12px 0;font-size:17px;color:#6E6259"><span style="width:28px;height:28px;border-radius:8px;background:#B4472A;display:flex;align-items:center;justify-content:center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-10"></path></svg></span><span style="text-decoration:line-through">2 gula lökar</span></div></div>
+<div><div style="font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#6E6259;margin-bottom:10px">Återkoppling och tomt läge</div>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:14px">
+<div style="background:#F6F1E9;border-radius:18px;padding:22px;text-align:center"><div style="display:flex;gap:6px;justify-content:center"><span style="width:10px;height:10px;border-radius:5px;background:#B4472A"></span><span style="width:10px;height:10px;border-radius:5px;background:#D99A83"></span><span style="width:10px;height:10px;border-radius:5px;background:#EAC7B8"></span></div><div style="font-family:Newsreader,serif;font-size:22px;margin-top:12px">Läser receptet …</div><div style="font-size:14px;color:#6E6259;margin-top:4px">Hittar ingredienser</div></div>
+<div style="background:#F6F1E9;border-radius:18px;padding:22px;text-align:center"><div style="font-family:Newsreader,serif;font-size:22px">Inga recept än</div><div style="font-size:14px;color:#6E6259;margin:4px 0 12px">Börja med ett du redan gillar.</div><span style="display:inline-flex;height:44px;padding:0 18px;border-radius:22px;background:#B4472A;color:#fff;align-items:center;font-weight:600;font-size:15px">Importera första receptet</span></div>
+</div>
+<div style="margin-top:14px;padding:14px 18px;border-radius:16px;background:#2A211B;color:#F6F1E9;font-size:15px;display:flex;gap:10px;align-items:center"><span style="color:#9FD3AE">✓</span>Laxpudding lades till i inköpslistan</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="dv-opt" id="1b">
+<div class="dv-olabel"><a class="dv-oid" href="#1b">1b</a><b>Örtagård</b> – ljus och lite svalare bas, djup örtgrön accent, Bricolage Grotesque i rubrikerna och Hanken Grotesk i resten. Kompakt lista och vita kort, tydlig och praktisk.</div>
+<div style="display:flex;gap:40px;align-items:flex-start;flex-wrap:wrap">
+
+<x-import component-from-global-scope="IOSDevice" from="./ios-frame.jsx" hint-size="402px,874px">
+<div style="position:relative;height:100%;background:#F4F3EE;font-family:'Hanken Grotesk',sans-serif;color:#1F2A24">
+<div style="position:absolute;inset:0;overflow:auto;padding:62px 0 120px">
+<div style="padding:0 20px"><div style="font-family:'Bricolage Grotesque',sans-serif;font-size:34px;font-weight:800;letter-spacing:-.02em">Recept</div><div style="font-size:15px;color:#5F6B63">Familjen Baard · 24 recept</div></div>
+<div style="display:flex;gap:8px;margin:16px 20px 0">
+<div style="flex:1;height:50px;border-radius:14px;background:#fff;display:flex;align-items:center;gap:10px;padding:0 14px;color:#5F6B63;font-size:16px;box-shadow:0 0 0 1px #E1E3DC"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg>Sök recept</div>
+<div style="width:50px;height:50px;border-radius:14px;background:#2E5A43;color:#fff;display:flex;align-items:center;justify-content:center"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 7h10M18 7h2M4 17h4M12 17h8"></path><circle cx="16" cy="7" r="2"></circle><circle cx="10" cy="17" r="2"></circle></svg></div>
+</div>
+<div style="display:flex;gap:18px;overflow:auto;padding:18px 20px 0;scrollbar-width:none;border-bottom:1px solid #E1E3DC;font-size:16px;font-weight:600;color:#5F6B63">
+<span style="flex:none;padding-bottom:12px;color:#1F2A24;box-shadow:inset 0 -3px 0 #2E5A43">Alla</span><span style="flex:none;padding-bottom:12px">Huvudrätt</span><span style="flex:none;padding-bottom:12px">Förrätt</span><span style="flex:none;padding-bottom:12px">Efterrätt</span><span style="flex:none;padding-bottom:12px">Frukost</span><span style="flex:none;padding-bottom:12px">Bakning</span>
+</div>
+<div style="display:flex;gap:8px;padding:14px 20px 4px"><span style="height:34px;padding:0 12px;border-radius:10px;background:#DDE8DF;color:#1E4331;font-size:14px;font-weight:600;display:flex;align-items:center">Nyast ▾</span><span style="height:34px;padding:0 12px;border-radius:10px;background:#fff;box-shadow:0 0 0 1px #E1E3DC;font-size:14px;font-weight:500;display:flex;align-items:center">Inte lagat på länge</span></div>
+<div style="display:flex;flex-direction:column;gap:10px;padding:10px 20px 0">
+<sc-for list="{{ recipes }}" as="r" hint-placeholder-count="5">
+<div style="display:flex;gap:14px;background:#fff;border-radius:18px;padding:10px;box-shadow:0 0 0 1px #E6E7E1">
+<div style="position:relative;width:96px;height:96px;flex:none;border-radius:12px;overflow:hidden;background:#DDE8DF">
+<sc-if value="{{ r.hasImg }}" hint-placeholder-val="{{ true }}"><img src="{{ r.img }}" alt="" style="width:100%;height:100%;object-fit:cover;display:block"></sc-if>
+<sc-if value="{{ r.noImg }}" hint-placeholder-val="{{ false }}"><div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:#2E5A43"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"><circle cx="12" cy="13" r="7"></circle><circle cx="12" cy="13" r="4"></circle><path d="M3 4v5a2 2 0 0 0 2 2M5 4v16M21 4c-1.5 0-2.5 2-2.5 5s1 3 2.5 3v8"></path></svg></div></sc-if>
+</div>
+<div style="flex:1;min-width:0;display:flex;flex-direction:column;justify-content:center;gap:4px">
+<div style="font-family:'Bricolage Grotesque',sans-serif;font-size:18px;font-weight:700;line-height:1.2;text-wrap:pretty">{{ r.t }}</div>
+<div style="font-size:14px;color:#5F6B63;display:flex;gap:10px;align-items:center"><span>{{ r.cat }}</span><span style="display:flex;align-items:center;gap:3px"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg>{{ r.time }}</span><span style="display:flex;align-items:center;gap:3px;color:#1F2A24;font-weight:600"><svg width="14" height="14" viewBox="0 0 24 24" fill="#D08A1E"><path d="M12 3.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8-5.2-2.7-5.2 2.7 1-5.8L3.5 9.7l5.9-.9z"></path></svg>{{ r.avg }}</span></div>
+<div style="font-size:13px;color:#5F6B63;display:flex;gap:6px;align-items:center"><sc-if value="{{ r.tried }}" hint-placeholder-val="{{ true }}"><span style="width:18px;height:18px;border-radius:9px;background:#2E5A43;color:#fff;display:flex;align-items:center;justify-content:center"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-10"></path></svg></span></sc-if>{{ r.last }}</div>
+</div>
+</div>
+</sc-for>
+</div>
+</div>
+<div style="position:absolute;left:12px;right:12px;bottom:26px;height:68px;border-radius:24px;background:#1F2A24;display:grid;grid-template-columns:repeat(4,1fr);align-items:center;font-size:12px;font-weight:600;color:#AEB8B1">
+<div style="display:flex;flex-direction:column;align-items:center;gap:2px;color:#fff"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4.5A1.5 1.5 0 0 1 6.5 3H19v15H6.5A1.5 1.5 0 0 0 5 19.5z"></path><path d="M5 19.5A1.5 1.5 0 0 0 6.5 21H19"></path></svg>Recept</div>
+<div style="display:flex;justify-content:center"><div style="height:48px;padding:0 14px;border-radius:16px;background:#9CD3AF;color:#12301F;display:flex;align-items:center;gap:6px;font-size:14px;font-weight:700"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"></path></svg>Importera</div></div>
+<div style="display:flex;flex-direction:column;align-items:center;gap:2px"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10 6h10M10 12h10M10 18h10"></path><path d="m3.5 6 1.2 1.2L7 5M3.5 12l1.2 1.2L7 11M3.5 18l1.2 1.2L7 17"></path></svg>Inköpslista</div>
+<div style="display:flex;flex-direction:column;align-items:center;gap:2px"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><circle cx="5" cy="12" r="1.8"></circle><circle cx="12" cy="12" r="1.8"></circle><circle cx="19" cy="12" r="1.8"></circle></svg>Mer</div>
+</div>
+</div>
+</x-import>
+
+<x-import component-from-global-scope="IOSDevice" from="./ios-frame.jsx" hint-size="402px,874px">
+<div style="position:relative;height:100%;background:#F4F3EE;font-family:'Hanken Grotesk',sans-serif;color:#1F2A24">
+<div style="position:absolute;inset:0;overflow:auto;padding:58px 0 110px">
+<div style="display:flex;justify-content:space-between;padding:0 16px 10px"><span style="width:44px;height:44px;border-radius:14px;background:#fff;box-shadow:0 0 0 1px #E1E3DC;display:flex;align-items:center;justify-content:center"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"></path></svg></span><div style="display:flex;gap:8px"><span style="width:44px;height:44px;border-radius:14px;background:#fff;box-shadow:0 0 0 1px #E1E3DC;display:flex;align-items:center;justify-content:center"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20h4L19 9l-4-4L4 16z"></path></svg></span><span style="width:44px;height:44px;border-radius:14px;background:#fff;box-shadow:0 0 0 1px #E1E3DC;display:flex;align-items:center;justify-content:center"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M8 7l4-4 4 4"></path><path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-7"></path></svg></span></div></div>
+<div style="margin:0 16px;height:260px;border-radius:24px;overflow:hidden;background:#DDE8DF"><img src="https://images.unsplash.com/photo-1473093295043-cdd812d0e601?w=900&amp;q=70&amp;auto=format&amp;fit=crop" alt="" style="width:100%;height:100%;object-fit:cover;display:block"></div>
+<div style="padding:18px 20px 0">
+<div style="display:flex;flex-wrap:wrap;gap:6px"><span style="height:30px;padding:0 11px;border-radius:9px;background:#2E5A43;color:#fff;font-size:14px;font-weight:600;display:flex;align-items:center">Huvudrätt</span><span style="height:30px;padding:0 11px;border-radius:9px;background:#DDE8DF;color:#1E4331;font-size:14px;font-weight:600;display:flex;align-items:center">Kyckling</span><span style="height:30px;padding:0 11px;border-radius:9px;background:#DDE8DF;color:#1E4331;font-size:14px;font-weight:600;display:flex;align-items:center">Vardag</span><span style="height:30px;padding:0 11px;border-radius:9px;background:#DDE8DF;color:#1E4331;font-size:14px;font-weight:600;display:flex;align-items:center">Barnvänligt</span></div>
+<h1 style="font-family:'Bricolage Grotesque',sans-serif;font-size:30px;font-weight:800;line-height:1.08;letter-spacing:-.02em;margin:12px 0 8px;text-wrap:pretty">Pasta med kyckling och soltorkade tomater</h1>
+<div style="display:flex;align-items:center;gap:6px;font-size:15px;color:#5F6B63"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1"></path><path d="M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"></path></svg>Från: <span style="color:#2E5A43;font-weight:600">smakrikt.se</span></div>
+<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:18px">
+<div style="background:#fff;border-radius:14px;padding:12px;box-shadow:0 0 0 1px #E6E7E1"><div style="font-size:13px;color:#5F6B63">Förberedelse</div><div style="font-size:19px;font-weight:700">10 min</div></div>
+<div style="background:#fff;border-radius:14px;padding:12px;box-shadow:0 0 0 1px #E6E7E1"><div style="font-size:13px;color:#5F6B63">Tillagning</div><div style="font-size:19px;font-weight:700">25 min</div></div>
+<div style="background:#2E5A43;color:#fff;border-radius:14px;padding:12px"><div style="font-size:13px;color:#CFE3D5">Totalt</div><div style="font-size:19px;font-weight:700">35 min</div></div>
+</div>
+<div style="margin-top:22px;background:#fff;border-radius:20px;padding:18px;box-shadow:0 0 0 1px #E6E7E1">
+<div style="display:flex;justify-content:space-between;align-items:center">
+<h2 style="font-family:'Bricolage Grotesque',sans-serif;font-size:22px;font-weight:700;margin:0">Ingredienser</h2>
+<div style="position:relative;height:44px;padding:0 12px;border-radius:12px;background:#DDE8DF;color:#1E4331;display:flex;align-items:center;gap:6px;font-size:16px;font-weight:700">{{ b.srvLabel }}<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="m6 9 6 6 6-6"></path></svg><select value="{{ b.srv }}" onChange="{{ b.onSrv }}" style="position:absolute;inset:0;opacity:0;width:100%"><sc-for list="{{ srvOpts }}" as="o"><option value="{{ o.v }}">{{ o.label }}</option></sc-for></select></div>
+</div>
+<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:14px;border-radius:12px;box-shadow:0 0 0 1px #CFD6CF;overflow:hidden">
+<sc-for list="{{ b.units }}" as="u" hint-placeholder-count="3"><button onClick="{{ u.pick }}" style="height:44px;border:0;background:{{ u.bg }};color:{{ u.fg }};font-size:15px;font-weight:600">{{ u.label }}</button></sc-for>
+</div>
+<sc-for list="{{ b.groups }}" as="g" hint-placeholder-count="2">
+<div style="margin-top:10px">
+<sc-if value="{{ g.hasTitle }}"><div style="font-family:'Bricolage Grotesque',sans-serif;font-size:17px;font-weight:700;color:#2E5A43;padding:12px 0 2px">{{ g.title }}</div></sc-if>
+<sc-for list="{{ g.items }}" as="i" hint-placeholder-count="4">
+<div style="display:flex;gap:12px;padding:11px 0;border-bottom:1px solid #EEEFEA;font-size:17px;line-height:1.35">
+<div style="width:92px;flex:none;font-weight:700;color:#1E4331"><sc-if value="{{ i.approx }}"><span title="Ungefärlig omräkning: vikten per dl varierar med hur ingrediensen är riven eller packad." style="cursor:help;border-bottom:1px dotted currentColor;margin-right:3px">≈</span></sc-if>{{ i.qty }} {{ i.unit }}</div>
+<div>{{ i.name }}<sc-if value="{{ i.hasNote }}"><span style="color:#5F6B63"> · {{ i.note }}</span></sc-if></div>
+</div>
+</sc-for>
+</div>
+</sc-for>
+</div>
+<h2 style="font-family:'Bricolage Grotesque',sans-serif;font-size:22px;font-weight:700;margin:28px 0 8px">Gör så här</h2>
+<div style="display:flex;flex-direction:column;gap:10px">
+<sc-for list="{{ steps }}" as="s" hint-placeholder-count="4">
+<div style="background:#fff;border-radius:18px;padding:16px 18px;box-shadow:0 0 0 1px #E6E7E1">
+<div style="font-family:'Bricolage Grotesque',sans-serif;font-size:14px;font-weight:700;color:#2E5A43;letter-spacing:.04em">STEG {{ s.n }}</div>
+<div style="font-size:18px;line-height:1.5;margin-top:4px;text-wrap:pretty">{{ s.t }}</div>
+</div>
+</sc-for>
+</div>
+<div style="margin:24px 0;background:#1F2A24;color:#EEF2EE;border-radius:22px;padding:20px">
+<div style="display:flex;justify-content:space-between;align-items:center"><div style="font-family:'Bricolage Grotesque',sans-serif;font-size:21px;font-weight:700">Familjen Baard</div><div style="height:36px;padding:0 12px;border-radius:12px;background:#2C3A32;display:flex;align-items:center;gap:6px;font-size:18px;font-weight:700"><svg width="16" height="16" viewBox="0 0 24 24" fill="#E6A845"><path d="M12 3.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8-5.2-2.7-5.2 2.7 1-5.8L3.5 9.7l5.9-.9z"></path></svg>{{ b.avg }}</div></div>
+<div style="font-size:14px;color:#AEB8B1;margin-top:4px">{{ b.countLabel }} · {{ b.lastLabel }}</div>
+<div style="display:flex;justify-content:space-between;align-items:center;margin-top:16px"><span style="font-size:16px;font-weight:600">Ditt betyg</span><div style="display:flex"><sc-for list="{{ b.stars }}" as="st" hint-placeholder-count="5"><button onClick="{{ st.pick }}" style="width:44px;height:44px;border:0;background:none;padding:0;display:flex;align-items:center;justify-content:center;color:{{ st.color }}"><svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8-5.2-2.7-5.2 2.7 1-5.8L3.5 9.7l5.9-.9z"></path></svg></button></sc-for></div></div>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:12px">
+<button onClick="{{ b.toggleTried }}" style="height:52px;border-radius:14px;border:0;background:{{ b.trackBg }};color:#fff;font-size:16px;font-weight:700;display:flex;align-items:center;justify-content:center;gap:6px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-10"></path></svg>{{ b.triedLabel }}</button>
+<button onClick="{{ b.cooked }}" style="height:52px;border-radius:14px;border:0;background:#9CD3AF;color:#12301F;font-size:16px;font-weight:700">Vi lagade den idag</button>
+</div>
+<div style="margin-top:14px;display:grid;grid-template-columns:1fr 1fr;gap:8px">
+<sc-for list="{{ b.members }}" as="m" hint-placeholder-count="4"><div style="background:#2C3A32;border-radius:14px;padding:10px 12px"><div style="font-size:14px;color:#AEB8B1">{{ m.name }}</div><div style="font-size:16px;letter-spacing:1px"><span style="color:#E6A845">{{ m.full }}</span><span style="color:#4A5A50">{{ m.empty }}</span></div></div></sc-for>
+</div>
+<div style="margin-top:12px;padding:12px 14px;border-radius:14px;background:#2C3A32;font-size:16px;line-height:1.45"><span style="color:#AEB8B1;font-size:13px;display:block">Din anteckning</span>Dubbla vitlöken. Barnen vill ha mer sås, ta 4 dl grädde.</div>
+</div>
+</div>
+</div>
+<div style="position:absolute;left:16px;right:16px;bottom:28px;height:56px;border-radius:18px;background:#2E5A43;color:#fff;display:flex;align-items:center;justify-content:center;gap:8px;font-size:17px;font-weight:700;box-shadow:0 10px 24px rgba(46,90,67,.3)"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 8h14l-1 12H6z"></path><path d="M9 8V6a3 3 0 0 1 6 0v2"></path></svg>Lägg till i inköpslista</div>
+<sc-if value="{{ b.toast }}"><div style="position:absolute;left:16px;right:16px;bottom:96px;padding:14px 18px;border-radius:14px;background:#fff;color:#1F2A24;font-size:15px;font-weight:600;display:flex;align-items:center;gap:10px;box-shadow:0 10px 30px rgba(0,0,0,.18)"><span style="width:24px;height:24px;border-radius:12px;background:#2E5A43;color:#fff;display:flex;align-items:center;justify-content:center"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-10"></path></svg></span>Loggat: lagad idag</div></sc-if>
+</div>
+</x-import>
+
+<div style="width:640px;background:#fff;border-radius:20px;padding:32px;font-family:'Hanken Grotesk',sans-serif;color:#1F2A24;display:flex;flex-direction:column;gap:28px;box-shadow:0 1px 3px rgba(0,0,0,.06)">
+<div style="font-family:'Bricolage Grotesque',sans-serif;font-size:30px;font-weight:800;letter-spacing:-.02em">Örtagård – komponenter</div>
+<div><div style="font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#5F6B63;margin-bottom:10px">Färger · ljust / mörkt</div>
+<div style="display:grid;grid-template-columns:repeat(8,1fr);gap:8px;font-size:11px;color:#5F6B63">
+<div><div style="height:48px;border-radius:10px;background:#F4F3EE;border:1px solid #E1E3DC"></div>Bas</div><div><div style="height:48px;border-radius:10px;background:#fff;border:1px solid #E1E3DC"></div>Yta</div><div><div style="height:48px;border-radius:10px;background:#1F2A24"></div>Bläck</div><div><div style="height:48px;border-radius:10px;background:#DDE8DF"></div>Salvia</div><div><div style="height:48px;border-radius:10px;background:#2E5A43"></div>Ört</div><div><div style="height:48px;border-radius:10px;background:#D08A1E"></div>Betyg</div><div><div style="height:48px;border-radius:10px;background:#A8660F"></div>Varning</div><div><div style="height:48px;border-radius:10px;background:#B3261E"></div>Fel</div>
+<div><div style="height:32px;border-radius:8px;background:#131815"></div></div><div><div style="height:32px;border-radius:8px;background:#1C231F"></div></div><div><div style="height:32px;border-radius:8px;background:#E8EDE8"></div></div><div><div style="height:32px;border-radius:8px;background:#2C3A32"></div></div><div><div style="height:32px;border-radius:8px;background:#9CD3AF"></div></div><div><div style="height:32px;border-radius:8px;background:#E6A845"></div></div><div><div style="height:32px;border-radius:8px;background:#E3A94B"></div></div><div><div style="height:32px;border-radius:8px;background:#F08A80"></div></div>
+</div></div>
+<div><div style="font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#5F6B63;margin-bottom:10px">Typografi</div>
+<div style="display:flex;flex-direction:column;gap:6px"><div style="font-family:'Bricolage Grotesque',sans-serif;font-size:34px;font-weight:800;letter-spacing:-.02em;line-height:1.1">Laxpudding <span style="font-family:'Hanken Grotesk';font-size:12px;color:#5F6B63;font-weight:500;letter-spacing:0">Bricolage 34 / 800</span></div><div style="font-family:'Bricolage Grotesque',sans-serif;font-size:22px;font-weight:700">Ingredienser <span style="font-family:'Hanken Grotesk';font-size:12px;color:#5F6B63;font-weight:500">Bricolage 22 / 700</span></div><div style="font-size:18px;line-height:1.5">Stekt lök ger sötma åt grytan. <span style="font-size:12px;color:#5F6B63">Hanken 18 steg</span></div><div style="font-size:16px">Brödtext och ingredienser <span style="font-size:12px;color:#5F6B63">Hanken 16–17</span></div><div style="font-size:14px;font-weight:700;color:#2E5A43;letter-spacing:.04em">STEG 1 · ETIKETT 14</div></div></div>
+<div><div style="font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#5F6B63;margin-bottom:10px">Chips, taggar, märken, betyg</div>
+<div style="display:flex;flex-wrap:wrap;gap:8px;align-items:center"><span style="height:30px;padding:0 11px;border-radius:9px;background:#2E5A43;color:#fff;font-size:14px;font-weight:600;display:flex;align-items:center">Huvudrätt</span><span style="height:30px;padding:0 11px;border-radius:9px;background:#DDE8DF;color:#1E4331;font-size:14px;font-weight:600;display:flex;align-items:center">Vegetariskt</span><span style="height:34px;padding:0 12px;border-radius:10px;background:#fff;box-shadow:0 0 0 1px #E1E3DC;font-size:14px;display:flex;align-items:center">Under 30 min</span><span style="height:26px;padding:0 9px;border-radius:8px;background:#FBF0DC;color:#7A4E0C;font-size:12px;font-weight:700;display:flex;align-items:center;gap:4px"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3c.5 4 2 5.5 6 6-4 .5-5.5 2-6 6-.5-4-2-5.5-6-6 4-.5 5.5-2 6-6z"></path></svg>AI-uppskattat</span><span style="display:flex;align-items:center;gap:6px;font-size:14px;font-weight:600"><span style="width:20px;height:20px;border-radius:10px;background:#2E5A43;color:#fff;display:flex;align-items:center;justify-content:center;font-size:11px">✓</span>Provat</span><span style="font-size:22px;letter-spacing:2px"><span style="color:#D08A1E">★★★★</span><span style="color:#D5D8D0">★</span></span></div></div>
+<div><div style="font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#5F6B63;margin-bottom:10px">Rader</div>
+<div style="display:flex;gap:12px;padding:11px 0;border-bottom:1px solid #EEEFEA;font-size:17px"><b style="width:92px;color:#1E4331">≈ 40 g</b><span>riven parmesan</span></div>
+<div style="background:#F4F3EE;border-radius:16px;padding:14px 16px;margin:10px 0"><div style="font-family:'Bricolage Grotesque';font-size:14px;font-weight:700;color:#2E5A43">STEG 2</div><div style="font-size:18px;line-height:1.5">Bryn kycklingen i olivolja, ca 6–8 minuter.</div></div>
+<div style="display:flex;align-items:center;gap:14px;padding:12px 0;border-bottom:1px solid #EEEFEA;font-size:17px"><span style="width:28px;height:28px;border-radius:14px;border:2px solid #B9C2BB"></span><span style="flex:1"><b>3 dl</b> grädde</span><span style="font-size:13px;padding:3px 8px;border-radius:8px;background:#DDE8DF;color:#1E4331;font-weight:600">2 recept</span></div>
+<div style="display:flex;align-items:center;gap:14px;padding:12px 0;font-size:17px;color:#5F6B63"><span style="width:28px;height:28px;border-radius:14px;background:#2E5A43;display:flex;align-items:center;justify-content:center"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-10"></path></svg></span><span style="text-decoration:line-through">2 gula lökar</span></div></div>
+<div><div style="font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#5F6B63;margin-bottom:10px">Återkoppling och tomt läge</div>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:14px">
+<div style="background:#F4F3EE;border-radius:18px;padding:20px"><div style="height:6px;border-radius:3px;background:#DDE8DF;overflow:hidden"><div style="width:62%;height:100%;background:#2E5A43"></div></div><div style="font-family:'Bricolage Grotesque';font-size:20px;font-weight:700;margin-top:14px">Läser receptet …</div><div style="font-size:14px;color:#5F6B63;margin-top:4px">✓ Titel och portioner<br>• Hittar ingredienser</div></div>
+<div style="background:#F4F3EE;border-radius:18px;padding:20px"><div style="font-family:'Bricolage Grotesque';font-size:20px;font-weight:700">Inga recept än</div><div style="font-size:14px;color:#5F6B63;margin:4px 0 12px">Klistra in en länk eller fotografera en sida ur en kokbok.</div><span style="display:inline-flex;height:44px;padding:0 16px;border-radius:14px;background:#2E5A43;color:#fff;align-items:center;font-weight:700;font-size:15px">Importera recept</span></div>
+</div>
+<div style="margin-top:14px;padding:14px 18px;border-radius:14px;background:#fff;box-shadow:0 6px 20px rgba(0,0,0,.1),0 0 0 1px #E6E7E1;font-size:15px;font-weight:600;display:flex;gap:10px;align-items:center"><span style="width:22px;height:22px;border-radius:11px;background:#2E5A43;color:#fff;display:flex;align-items:center;justify-content:center;font-size:12px">✓</span>Laxpudding lades till i inköpslistan</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="dv-opt" id="1c">
+<div class="dv-olabel"><a class="dv-oid" href="#1c">1c</a><b>Saffran</b> – mörkt läge först: varm kolgrå bakgrund, saffransgul accent, Young Serif i rubrikerna och Manrope i resten. Stora bilder som går kant i kant, som en krog på kvällen.</div>
+<div style="display:flex;gap:40px;align-items:flex-start;flex-wrap:wrap">
+
+<x-import component-from-global-scope="IOSDevice" from="./ios-frame.jsx" dark="{{ true }}" hint-size="402px,874px">
+<div style="position:relative;height:100%;background:#1B1714;font-family:Manrope,sans-serif;color:#EFE6DA">
+<div style="position:absolute;inset:0;overflow:auto;padding:62px 0 120px">
+<div style="padding:0 20px;display:flex;justify-content:space-between;align-items:center"><div style="font-family:'Young Serif',serif;font-size:34px;line-height:1.1">Recept</div><div style="width:44px;height:44px;border-radius:22px;background:#26201B;display:flex;align-items:center;justify-content:center"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg></div></div>
+<div style="padding:4px 20px 0;font-size:15px;color:#B3A99E">Familjen Baard · 24 recept</div>
+<div style="display:flex;gap:8px;overflow:auto;padding:16px 20px 4px;scrollbar-width:none">
+<span style="flex:none;height:40px;padding:0 18px;border-radius:20px;background:#E2A838;color:#1B1714;display:flex;align-items:center;font-size:15px;font-weight:700">Alla</span>
+<span style="flex:none;height:40px;padding:0 18px;border-radius:20px;background:#26201B;display:flex;align-items:center;font-size:15px;font-weight:600">Huvudrätt</span>
+<span style="flex:none;height:40px;padding:0 18px;border-radius:20px;background:#26201B;display:flex;align-items:center;font-size:15px;font-weight:600">Efterrätt</span>
+<span style="flex:none;height:40px;padding:0 18px;border-radius:20px;background:#26201B;display:flex;align-items:center;font-size:15px;font-weight:600">Förrätt</span>
+<span style="flex:none;height:40px;padding:0 18px;border-radius:20px;background:#26201B;display:flex;align-items:center;font-size:15px;font-weight:600">Bakning</span>
+</div>
+<div style="display:flex;justify-content:space-between;align-items:center;padding:8px 20px 8px;font-size:15px;font-weight:600"><span style="display:flex;align-items:center;gap:6px;height:44px">Högst betyg<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="m6 9 6 6 6-6"></path></svg></span><span style="display:flex;align-items:center;gap:6px;height:44px;color:#E2A838"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 7h10M18 7h2M4 17h4M12 17h8"></path><circle cx="16" cy="7" r="2"></circle><circle cx="10" cy="17" r="2"></circle></svg>Filter · 1</span></div>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;padding:0 20px">
+<sc-for list="{{ recipes }}" as="r" hint-placeholder-count="4">
+<div style="position:relative;height:236px;border-radius:20px;overflow:hidden;background:#26201B">
+<sc-if value="{{ r.hasImg }}" hint-placeholder-val="{{ true }}"><img src="{{ r.img }}" alt="" style="width:100%;height:100%;object-fit:cover;display:block"></sc-if>
+<sc-if value="{{ r.noImg }}" hint-placeholder-val="{{ false }}"><div style="position:absolute;inset:0;background:#2E2620;display:flex;align-items:flex-start;justify-content:center;padding-top:34px"><div style="font-family:'Young Serif',serif;font-size:54px;color:#E2A838;opacity:.9">{{ r.initials }}</div></div></sc-if>
+<div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,16,13,0) 35%,rgba(20,16,13,.88) 100%)"></div>
+<sc-if value="{{ r.tried }}" hint-placeholder-val="{{ true }}"><span style="position:absolute;top:10px;right:10px;width:28px;height:28px;border-radius:14px;background:rgba(27,23,20,.8);color:#E2A838;display:flex;align-items:center;justify-content:center"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-10"></path></svg></span></sc-if>
+<div style="position:absolute;left:12px;right:12px;bottom:12px">
+<div style="font-family:'Young Serif',serif;font-size:17px;line-height:1.2;color:#fff;text-wrap:pretty">{{ r.t }}</div>
+<div style="display:flex;gap:8px;font-size:12px;font-weight:600;color:#E8DDD0;margin-top:6px"><span style="color:#E2A838">★ {{ r.avg }}</span><span>{{ r.time }}</span></div>
+<div style="font-size:12px;color:#CFC3B5;margin-top:2px">{{ r.lastShort }}</div>
+</div>
+</div>
+</sc-for>
+</div>
+</div>
+<div style="position:absolute;left:0;right:0;bottom:0;height:88px;background:rgba(27,23,20,.96);border-top:1px solid #332A23;display:grid;grid-template-columns:repeat(4,1fr);align-items:start;padding-top:10px;font-size:12px;font-weight:600;color:#B3A99E">
+<div style="display:flex;flex-direction:column;align-items:center;gap:3px;color:#E2A838"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4.5A1.5 1.5 0 0 1 6.5 3H19v15H6.5A1.5 1.5 0 0 0 5 19.5z"></path><path d="M5 19.5A1.5 1.5 0 0 0 6.5 21H19"></path></svg>Recept</div>
+<div style="display:flex;flex-direction:column;align-items:center;gap:3px;color:#EFE6DA"><div style="width:46px;height:46px;margin-top:-8px;border-radius:14px;background:#E2A838;color:#1B1714;display:flex;align-items:center;justify-content:center"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"></path></svg></div>Importera</div>
+<div style="display:flex;flex-direction:column;align-items:center;gap:3px"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10 6h10M10 12h10M10 18h10"></path><path d="m3.5 6 1.2 1.2L7 5M3.5 12l1.2 1.2L7 11M3.5 18l1.2 1.2L7 17"></path></svg>Inköpslista</div>
+<div style="display:flex;flex-direction:column;align-items:center;gap:3px"><svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><circle cx="5" cy="12" r="1.8"></circle><circle cx="12" cy="12" r="1.8"></circle><circle cx="19" cy="12" r="1.8"></circle></svg>Mer</div>
+</div>
+</div>
+</x-import>
+
+<x-import component-from-global-scope="IOSDevice" from="./ios-frame.jsx" dark="{{ true }}" hint-size="402px,874px">
+<div style="position:relative;height:100%;background:#1B1714;font-family:Manrope,sans-serif;color:#EFE6DA">
+<div style="position:absolute;inset:0;overflow:auto;padding-bottom:110px">
+<div style="position:relative;height:470px;background:#26201B">
+<img src="https://images.unsplash.com/photo-1473093295043-cdd812d0e601?w=900&amp;q=70&amp;auto=format&amp;fit=crop" alt="" style="width:100%;height:100%;object-fit:cover;display:block">
+<div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(27,23,20,.35) 0%,rgba(27,23,20,0) 22%,rgba(27,23,20,0) 45%,#1B1714 100%)"></div>
+<div style="position:absolute;top:58px;left:16px;right:16px;display:flex;justify-content:space-between">
+<span style="width:44px;height:44px;border-radius:22px;background:rgba(27,23,20,.6);display:flex;align-items:center;justify-content:center"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"></path></svg></span>
+<span style="width:44px;height:44px;border-radius:22px;background:rgba(27,23,20,.6);display:flex;align-items:center;justify-content:center"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M8 7l4-4 4 4"></path><path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-7"></path></svg></span>
+</div>
+<div style="position:absolute;left:20px;right:20px;bottom:6px">
+<div style="font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#E2A838">Huvudrätt</div>
+<h1 style="font-family:'Young Serif',serif;font-size:32px;font-weight:400;line-height:1.12;margin:8px 0 0;color:#fff;text-wrap:pretty">Pasta med kyckling och soltorkade tomater</h1>
+</div>
+</div>
+<div style="padding:14px 20px 0">
+<div style="display:flex;flex-wrap:wrap;gap:6px;align-items:center"><span style="height:30px;padding:0 12px;border-radius:15px;background:#26201B;font-size:14px;font-weight:600;display:flex;align-items:center">Kyckling</span><span style="height:30px;padding:0 12px;border-radius:15px;background:#26201B;font-size:14px;font-weight:600;display:flex;align-items:center">Vardag</span><span style="height:30px;padding:0 12px;border-radius:15px;background:#26201B;font-size:14px;font-weight:600;display:flex;align-items:center">Barnvänligt</span></div>
+<div style="display:flex;align-items:center;gap:6px;font-size:15px;color:#B3A99E;margin-top:12px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1"></path><path d="M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"></path></svg>Från: <span style="color:#EFE6DA;text-decoration:underline;text-underline-offset:3px">smakrikt.se</span></div>
+<div style="display:flex;gap:22px;margin-top:18px;font-size:14px;color:#B3A99E"><div>Förberedelse<div style="font-size:20px;font-weight:700;color:#EFE6DA">10 min</div></div><div>Tillagning<div style="font-size:20px;font-weight:700;color:#EFE6DA">25 min</div></div><div>Totalt<div style="font-size:20px;font-weight:700;color:#E2A838">35 min</div></div></div>
+<div style="margin-top:22px;background:#26201B;border-radius:20px;padding:6px">
+<div style="display:flex;align-items:center;justify-content:space-between;padding:8px 10px 10px 12px"><span style="font-size:15px;color:#B3A99E">Portioner</span><div style="position:relative;height:44px;padding:0 12px 0 16px;border-radius:14px;background:#1B1714;display:flex;align-items:center;gap:6px;font-size:17px;font-weight:700">{{ c.srvLabel }}<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#E2A838" stroke-width="2.2" stroke-linecap="round"><path d="m6 9 6 6 6-6"></path></svg><select value="{{ c.srv }}" onChange="{{ c.onSrv }}" style="position:absolute;inset:0;opacity:0;width:100%"><sc-for list="{{ srvOpts }}" as="o"><option value="{{ o.v }}">{{ o.label }}</option></sc-for></select></div></div>
+<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:4px">
+<sc-for list="{{ c.units }}" as="u" hint-placeholder-count="3"><button onClick="{{ u.pick }}" style="height:44px;border:0;border-radius:14px;background:{{ u.bg }};color:{{ u.fg }};font-size:15px;font-weight:700">{{ u.label }}</button></sc-for>
+</div>
+</div>
+<h2 style="font-family:'Young Serif',serif;font-size:24px;font-weight:400;margin:28px 0 4px">Ingredienser</h2>
+<sc-for list="{{ c.groups }}" as="g" hint-placeholder-count="2">
+<div>
+<sc-if value="{{ g.hasTitle }}"><div style="font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#E2A838;padding:18px 0 4px">{{ g.title }}</div></sc-if>
+<sc-for list="{{ g.items }}" as="i" hint-placeholder-count="4">
+<div style="display:grid;grid-template-columns:96px 1fr;gap:12px;padding:12px 0;border-bottom:1px solid #332A23;font-size:17px;line-height:1.35">
+<div style="font-weight:700;color:#F3D69A"><sc-if value="{{ i.approx }}"><span title="Ungefärlig omräkning: vikten per dl varierar med hur ingrediensen är riven eller packad." style="cursor:help;border-bottom:1px dotted currentColor;margin-right:3px">≈</span></sc-if>{{ i.qty }} {{ i.unit }}</div>
+<div>{{ i.name }}<sc-if value="{{ i.hasNote }}"><span style="color:#B3A99E">, {{ i.note }}</span></sc-if></div>
+</div>
+</sc-for>
+</div>
+</sc-for>
+<h2 style="font-family:'Young Serif',serif;font-size:24px;font-weight:400;margin:32px 0 4px">Gör så här</h2>
+<sc-for list="{{ steps }}" as="s" hint-placeholder-count="4">
+<div style="display:grid;grid-template-columns:44px 1fr;gap:10px;padding:16px 0;border-bottom:1px solid #332A23">
+<div style="font-family:'Young Serif',serif;font-size:34px;line-height:1;color:#E2A838">{{ s.n }}</div>
+<div style="font-size:18px;line-height:1.55;text-wrap:pretty">{{ s.t }}</div>
+</div>
+</sc-for>
+<div style="margin:30px 0 24px;border-radius:22px;padding:20px;background:#26201B">
+<div style="display:flex;align-items:baseline;justify-content:space-between"><div style="font-family:'Young Serif',serif;font-size:22px">Familjen Baard</div><div style="font-family:'Young Serif',serif;font-size:30px;color:#E2A838">{{ c.avg }}</div></div>
+<div style="font-size:14px;color:#B3A99E;margin-top:2px">{{ c.countLabel }} · {{ c.lastLabel }}</div>
+<div style="display:flex;justify-content:space-between;margin:14px -4px 0"><sc-for list="{{ c.stars }}" as="st" hint-placeholder-count="5"><button onClick="{{ st.pick }}" style="width:56px;height:56px;border:0;border-radius:16px;background:#1B1714;padding:0;display:flex;align-items:center;justify-content:center;color:{{ st.color }}"><svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8-5.2-2.7-5.2 2.7 1-5.8L3.5 9.7l5.9-.9z"></path></svg></button></sc-for></div>
+<div style="text-align:center;font-size:13px;color:#B3A99E;margin-top:6px">Ditt betyg: {{ c.myLabel }}</div>
+<div style="display:flex;justify-content:space-between;align-items:center;padding:14px 0;margin-top:10px;border-top:1px solid #3A3028"><span style="font-size:17px;font-weight:600">Provat</span><button onClick="{{ c.toggleTried }}" style="position:relative;width:52px;height:32px;border:0;border-radius:16px;background:{{ c.trackBg }};padding:0;transition:background .2s"><span style="position:absolute;top:3px;left:3px;width:26px;height:26px;border-radius:13px;background:#fff;transform:translateX({{ c.knobX }});transition:transform .2s"></span></button></div>
+<button onClick="{{ c.cooked }}" style="width:100%;height:54px;border-radius:16px;border:0;background:#E2A838;color:#1B1714;font-size:17px;font-weight:700">Vi lagade den idag</button>
+<div style="margin-top:14px"><sc-for list="{{ c.members }}" as="m" hint-placeholder-count="4"><div style="display:flex;align-items:center;gap:12px;padding:8px 0"><span style="width:34px;height:34px;border-radius:17px;background:#3A3028;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px;color:#E2A838">{{ m.init }}</span><span style="flex:1;font-size:16px">{{ m.name }}</span><span style="font-size:16px;letter-spacing:1px"><span style="color:#E2A838">{{ m.full }}</span><span style="color:#4A4038">{{ m.empty }}</span></span></div></sc-for></div>
+<div style="margin-top:10px;padding:12px 14px;border-radius:14px;background:#1B1714;font-size:16px;line-height:1.45;color:#EFE6DA;font-style:italic">”Dubbla vitlöken. Barnen vill ha mer sås, ta 4 dl grädde.”</div>
+</div>
+</div>
+</div>
+<div style="position:absolute;left:0;right:0;bottom:0;padding:12px 16px 30px;background:linear-gradient(180deg,rgba(27,23,20,0),#1B1714 30%);display:flex;gap:10px">
+<span style="width:54px;height:54px;flex:none;border-radius:16px;background:#26201B;display:flex;align-items:center;justify-content:center"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#EFE6DA" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20h4L19 9l-4-4L4 16z"></path></svg></span>
+<span style="flex:1;height:54px;border-radius:16px;background:#EFE6DA;color:#1B1714;display:flex;align-items:center;justify-content:center;gap:8px;font-size:17px;font-weight:700"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 8h14l-1 12H6z"></path><path d="M9 8V6a3 3 0 0 1 6 0v2"></path></svg>Lägg till i inköpslista</span>
+</div>
+<sc-if value="{{ c.toast }}"><div style="position:absolute;left:20px;right:20px;bottom:106px;padding:14px 18px;border-radius:16px;background:#EFE6DA;color:#1B1714;font-size:15px;font-weight:700;display:flex;align-items:center;gap:10px;box-shadow:0 10px 30px rgba(0,0,0,.4)"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2F6A43" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-10"></path></svg>Loggat: lagad idag</div></sc-if>
+</div>
+</x-import>
+
+<div style="width:640px;background:#1B1714;border-radius:20px;padding:32px;font-family:Manrope,sans-serif;color:#EFE6DA;display:flex;flex-direction:column;gap:28px">
+<div style="font-family:'Young Serif',serif;font-size:30px">Saffran – komponenter</div>
+<div><div style="font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#B3A99E;margin-bottom:10px">Färger · mörkt / ljust</div>
+<div style="display:grid;grid-template-columns:repeat(8,1fr);gap:8px;font-size:11px;color:#B3A99E">
+<div><div style="height:48px;border-radius:10px;background:#1B1714;box-shadow:0 0 0 1px #3A3028"></div>Bas</div><div><div style="height:48px;border-radius:10px;background:#26201B"></div>Yta</div><div><div style="height:48px;border-radius:10px;background:#EFE6DA"></div>Bläck</div><div><div style="height:48px;border-radius:10px;background:#B3A99E"></div>Dämpad</div><div><div style="height:48px;border-radius:10px;background:#E2A838"></div>Saffran</div><div><div style="height:48px;border-radius:10px;background:#7CC08F"></div>Klar</div><div><div style="height:48px;border-radius:10px;background:#E3894B"></div>Varning</div><div><div style="height:48px;border-radius:10px;background:#F08A80"></div>Fel</div>
+<div><div style="height:32px;border-radius:8px;background:#FAF6EE"></div></div><div><div style="height:32px;border-radius:8px;background:#fff"></div></div><div><div style="height:32px;border-radius:8px;background:#231C16;box-shadow:0 0 0 1px #3A3028"></div></div><div><div style="height:32px;border-radius:8px;background:#6B5F52"></div></div><div><div style="height:32px;border-radius:8px;background:#9A6A0C"></div></div><div><div style="height:32px;border-radius:8px;background:#2F6A43"></div></div><div><div style="height:32px;border-radius:8px;background:#A8660F"></div></div><div><div style="height:32px;border-radius:8px;background:#B3261E"></div></div>
+</div></div>
+<div><div style="font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#B3A99E;margin-bottom:10px">Typografi</div>
+<div style="display:flex;flex-direction:column;gap:6px"><div style="font-family:'Young Serif',serif;font-size:34px;line-height:1.1">Laxpudding <span style="font-family:Manrope;font-size:12px;color:#B3A99E">Young Serif 34</span></div><div style="font-family:'Young Serif',serif;font-size:24px">Ingredienser <span style="font-family:Manrope;font-size:12px;color:#B3A99E">Young Serif 24</span></div><div style="font-size:18px;line-height:1.55">Stekt lök ger sötma åt grytan. <span style="font-size:12px;color:#B3A99E">Manrope 18 steg</span></div><div style="font-size:16px">Brödtext och ingredienser <span style="font-size:12px;color:#B3A99E">Manrope 16–17</span></div><div style="font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#E2A838">Etikett 13 · versaler</div></div></div>
+<div><div style="font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#B3A99E;margin-bottom:10px">Chips, taggar, märken, betyg</div>
+<div style="display:flex;flex-wrap:wrap;gap:8px;align-items:center"><span style="height:40px;padding:0 18px;border-radius:20px;background:#E2A838;color:#1B1714;display:flex;align-items:center;font-size:15px;font-weight:700">Alla</span><span style="height:40px;padding:0 18px;border-radius:20px;background:#26201B;display:flex;align-items:center;font-size:15px;font-weight:600">Dryck</span><span style="height:30px;padding:0 12px;border-radius:15px;background:#26201B;font-size:14px;font-weight:600;display:flex;align-items:center">Glutenfritt</span><span style="height:26px;padding:0 9px;border-radius:13px;box-shadow:inset 0 0 0 1px #6A5A3A;color:#F3D69A;font-size:12px;font-weight:700;display:flex;align-items:center;gap:4px"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3c.5 4 2 5.5 6 6-4 .5-5.5 2-6 6-.5-4-2-5.5-6-6 4-.5 5.5-2 6-6z"></path></svg>AI-uppskattat</span><span style="width:28px;height:28px;border-radius:14px;background:#26201B;color:#E2A838;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700">✓</span><span style="font-size:22px;letter-spacing:2px"><span style="color:#E2A838">★★★★</span><span style="color:#4A4038">★</span></span></div></div>
+<div><div style="font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#B3A99E;margin-bottom:10px">Rader</div>
+<div style="display:grid;grid-template-columns:96px 1fr;gap:12px;padding:12px 0;border-bottom:1px solid #332A23;font-size:17px"><b style="color:#F3D69A">≈ 40 g</b><span>riven parmesan</span></div>
+<div style="display:grid;grid-template-columns:44px 1fr;gap:10px;padding:14px 0;border-bottom:1px solid #332A23"><div style="font-family:'Young Serif',serif;font-size:34px;line-height:1;color:#E2A838">2</div><div style="font-size:18px;line-height:1.55">Bryn kycklingen i olivolja, ca 6–8 minuter.</div></div>
+<div style="display:flex;align-items:center;gap:14px;padding:12px 0;border-bottom:1px solid #332A23;font-size:17px"><span style="width:28px;height:28px;border-radius:9px;box-shadow:inset 0 0 0 2px #5A4D42"></span><span style="flex:1"><b>3 dl</b> grädde</span><span style="font-size:13px;color:#B3A99E">2 recept</span></div>
+<div style="display:flex;align-items:center;gap:14px;padding:12px 0;font-size:17px;color:#8F8478"><span style="width:28px;height:28px;border-radius:9px;background:#E2A838;display:flex;align-items:center;justify-content:center"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1B1714" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-10"></path></svg></span><span style="text-decoration:line-through">2 gula lökar</span></div></div>
+<div><div style="font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#B3A99E;margin-bottom:10px">Återkoppling och tomt läge</div>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:14px">
+<div style="background:#26201B;border-radius:18px;padding:22px;text-align:center"><div style="width:44px;height:44px;margin:0 auto;border-radius:22px;border:3px solid #3A3028;border-top-color:#E2A838"></div><div style="font-family:'Young Serif',serif;font-size:20px;margin-top:12px">Läser receptet …</div><div style="font-size:14px;color:#B3A99E;margin-top:4px">Tolkar stegen</div></div>
+<div style="background:#26201B;border-radius:18px;padding:22px;text-align:center"><div style="font-family:'Young Serif',serif;font-size:20px">Tomt i receptboken</div><div style="font-size:14px;color:#B3A99E;margin:4px 0 12px">Lägg till familjens första favorit.</div><span style="display:inline-flex;height:44px;padding:0 18px;border-radius:14px;background:#E2A838;color:#1B1714;align-items:center;font-weight:700;font-size:15px">Importera recept</span></div>
+</div>
+<div style="margin-top:14px;padding:14px 18px;border-radius:16px;background:#EFE6DA;color:#1B1714;font-size:15px;font-weight:700;display:flex;gap:10px;align-items:center"><span style="color:#2F6A43">✓</span>Laxpudding lades till i inköpslistan</div>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<p class="dv-next">Nästa steg, till exempel: "kör på <a class="dv-oid" href="#1a">1a</a> men med den kompakta listan från <a class="dv-oid" href="#1b">1b</a>" · "<a class="dv-oid" href="#1c">1c</a> fast i ljust läge" · "bygg hela prototypen i <a class="dv-oid" href="#1b">1b</a>"</p>
+</section>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+const IMG = id => 'https://images.unsplash.com/photo-' + id + '?w=800&q=70&auto=format&fit=crop';
+const RECIPES = [
+  { t: 'Pasta med kyckling och soltorkade tomater', cat: 'Huvudrätt', time: '35 min', avg: '4,3', tried: true, last: 'Senast lagad: 12 dagar sedan', lastShort: '12 dagar sedan', img: IMG('1473093295043-cdd812d0e601') },
+  { t: 'Laxpudding', cat: 'Huvudrätt', time: '1 tim 10 min', avg: '4,8', tried: true, last: 'Senast lagad: 3 veckor sedan', lastShort: '3 veckor sedan', img: IMG('1467003909585-2f8a72700288') },
+  { t: 'Toast Skagen', cat: 'Förrätt', time: '20 min', avg: '–', tried: false, last: 'Aldrig lagad', lastShort: 'Aldrig lagad', img: null, initials: 'TS' },
+  { t: 'Linsgryta med kokosmjölk', cat: 'Huvudrätt', time: '40 min', avg: '4,0', tried: true, last: 'Senast lagad: 5 dagar sedan', lastShort: '5 dagar sedan', img: IMG('1547592180-85f173990554') },
+  { t: 'Kladdkaka', cat: 'Bakning', time: '30 min', avg: '5,0', tried: true, last: 'Senast lagad: 2 månader sedan', lastShort: '2 månader sedan', img: IMG('1606313564200-e75d5e30476c') },
+  { t: 'Pannkakor', cat: 'Frukost', time: '25 min', avg: '4,5', tried: true, last: 'Senast lagad: igår', lastShort: 'Igår', img: IMG('1567620905732-2d1ec7ab7445') },
+];
+const GROUPS = [
+  { g: null, items: [
+    { k: 'w', q: 400, n: 'pasta', note: 't.ex. penne' },
+    { k: 'w', q: 500, n: 'kycklingfilé', note: 'i bitar' },
+    { k: 'v', q: 100, n: 'soltorkade tomater', note: 'strimlade' },
+    { k: 'n', q: 2, u: ['klyfta', 'klyftor'], n: 'vitlök', note: 'pressad' },
+    { k: 'v', q: 15, n: 'olivolja' },
+  ]},
+  { g: 'Sås', items: [
+    { k: 'v', q: 300, n: 'matlagningsgrädde' },
+    { k: 'v', q: 100, n: 'riven parmesan', d: 0.4 },
+    { k: 'v', q: 10, n: 'torkad basilika' },
+    { k: 'x', n: 'Salt och peppar', note: 'efter smak' },
+  ]},
+];
+const STEPS = [
+  'Koka pastan i rikligt med saltat vatten enligt anvisningen på förpackningen.',
+  'Bryn kycklingen i olivolja på medelhög värme, ca 6–8 minuter. Salta och peppra.',
+  'Tillsätt vitlök och soltorkade tomater och fräs en minut. Häll på grädden och låt sjuda i 5 minuter.',
+  'Rör ner parmesan och basilika. Vänd ner den avrunna pastan och servera direkt.',
+];
+const PAL = {
+  a: { acc: '#B4472A', on: '#FFFFFF', offFg: '#2A211B', star: '#B4472A', starOff: '#DCCFBF' },
+  b: { acc: '#2E5A43', on: '#FFFFFF', offFg: '#1F2A24', star: '#E6A845', starOff: '#4A5A50', triedOff: '#3A4A40' },
+  c: { acc: '#E2A838', on: '#1B1714', offFg: '#EFE6DA', star: '#E2A838', starOff: '#4A4038' },
+};
+const num = x => String(x).replace('.', ',');
+const half = x => num(Math.max(0.5, Math.round(x * 2) / 2));
+const rg = x => x < 50 ? Math.max(1, Math.round(x)) : Math.round(x / 5) * 5;
+const qtr = x => { const v = Math.max(0.25, Math.round(x * 4) / 4), w = Math.floor(v), s = { 0: '', 0.25: '¼', 0.5: '½', 0.75: '¾' }[v - w]; return (w ? String(w) : '') + s; };
+function fmt(it, srv, sys) {
+  const q = (it.q || 0) * srv / 4;
+  if (it.k === 'x') return { qty: '', unit: '', approx: false };
+  if (it.k === 'n') { const v = Math.max(0.5, Math.round(q * 2) / 2); return { qty: num(v), unit: v <= 1 ? it.u[0] : it.u[1], approx: false }; }
+  if (it.k === 'w') {
+    if (sys === 'us') { const oz = q / 28.35; return oz >= 16 ? { qty: num(Math.round(oz / 16 * 10) / 10), unit: 'lb', approx: false } : { qty: half(oz), unit: 'oz', approx: false }; }
+    return q >= 1000 ? { qty: num(Math.round(q / 100) / 10), unit: 'kg', approx: false } : { qty: String(rg(q)), unit: 'g', approx: false };
+  }
+  if (sys === 'sv') {
+    if (q >= 100) return { qty: half(q / 100), unit: 'dl', approx: false };
+    if (q >= 15) return { qty: half(q / 15), unit: 'msk', approx: false };
+    if (q >= 5) return { qty: half(q / 5), unit: 'tsk', approx: false };
+    return { qty: String(Math.max(1, Math.round(q))), unit: 'krm', approx: false };
+  }
+  if (sys === 'metric') {
+    if (it.d) return { qty: String(rg(q * it.d)), unit: 'g', approx: true };
+    return q >= 1000 ? { qty: num(Math.round(q / 100) / 10), unit: 'l', approx: false } : { qty: String(q >= 20 ? Math.round(q / 5) * 5 : Math.round(q)), unit: 'ml', approx: false };
+  }
+  if (q >= 60) { const c = qtr(q / 240); return { qty: c, unit: (q / 240) > 1.1 ? 'cups' : 'cup', approx: false }; }
+  if (q >= 15) return { qty: qtr(q / 15), unit: 'tbsp', approx: false };
+  return { qty: qtr(q / 5), unit: 'tsp', approx: false };
+}
+const base = () => ({ srv: 4, sys: 'sv', my: 5, tried: true, n: 7, last: '12 dagar sedan', toast: false });
+
+class Component extends DCLogic {
+  state = { a: base(), b: base(), c: base() };
+  upd(d, p) { this.setState(s => ({ [d]: { ...s[d], ...p } })); }
+  componentWillUnmount() { ['a', 'b', 'c'].forEach(d => clearTimeout(this['t' + d])); }
+  dir(d) {
+    const st = this.state[d], P = PAL[d];
+    const all = [{ name: 'Maria (du)', r: st.my }, { name: 'Ulrik', r: 4 }, { name: 'Oscar', r: 5 }, { name: 'Wilma', r: 3 }];
+    const avg = all.reduce((a, m) => a + m.r, 0) / all.length;
+    return {
+      srv: String(st.srv), srvLabel: st.srv + (st.srv === 1 ? ' portion' : ' portioner'),
+      onSrv: e => this.upd(d, { srv: +e.target.value }),
+      units: [['sv', 'Svenska'], ['metric', 'Metriskt'], ['us', 'US']].map(([k, l]) => ({ label: l, pick: () => this.upd(d, { sys: k }), bg: st.sys === k ? P.acc : 'transparent', fg: st.sys === k ? P.on : P.offFg })),
+      groups: GROUPS.map(g => ({ title: g.g, hasTitle: !!g.g, items: g.items.map(it => { const f = fmt(it, st.srv, st.sys); return { ...f, name: it.n, note: it.note || '', hasNote: !!it.note }; }) })),
+      stars: [1, 2, 3, 4, 5].map(i => ({ pick: () => this.upd(d, { my: i }), color: i <= st.my ? P.star : P.starOff })),
+      myLabel: st.my + ' av 5',
+      members: all.map(m => ({ name: m.name, init: m.name[0], full: '★'.repeat(m.r), empty: '★'.repeat(5 - m.r) })),
+      avg: num(avg.toFixed(1)),
+      tried: st.tried, triedLabel: st.tried ? 'Provat' : 'Ej provat',
+      toggleTried: () => this.upd(d, { tried: !st.tried }),
+      trackBg: st.tried ? P.acc : (P.triedOff || P.starOff), knobX: st.tried ? '20px' : '0px',
+      cooked: () => { this.upd(d, { n: st.n + 1, last: 'idag', tried: true, toast: true }); clearTimeout(this['t' + d]); this['t' + d] = setTimeout(() => this.upd(d, { toast: false }), 2200); },
+      countLabel: 'Lagad ' + st.n + ' gånger', lastLabel: 'senast ' + st.last,
+      toast: st.toast,
+    };
+  }
+  renderVals() {
+    return {
+      recipes: RECIPES.map(r => ({ ...r, hasImg: !!r.img, noImg: !r.img })),
+      steps: STEPS.map((t, i) => ({ t, n: i + 1 })),
+      srvOpts: [1, 2, 3, 4, 5, 6, 7, 8].map(v => ({ v: String(v), label: v + (v === 1 ? ' portion' : ' portioner') })),
+      a: this.dir('a'), b: this.dir('b'), c: this.dir('c'),
+    };
+  }
+}
+</script>
+</body>
+</html>
