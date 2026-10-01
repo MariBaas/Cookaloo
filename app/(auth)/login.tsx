@@ -5,7 +5,7 @@ import { Input, Button, Card } from '@/components/ui';
 import { Mail, CheckCircle2, AlertCircle } from 'lucide-react-native';
 
 export default function LoginScreen() {
-  const { signInWithGoogle, signInWithOtp } = useAuth();
+  const { signInWithGoogle, signInWithOtp, signInDemo } = useAuth();
 
   const [email, setEmail] = useState('');
   const [loading, setLoading] = useState(false);
@@ -130,6 +130,16 @@ export default function LoginScreen() {
                 loading={loading}
                 onPress={handleMagicLink}
                 icon={<Mail size={18} color="#FFFFFF" />}
+                className="w-full mb-3"
+              />
+
+              <Button
+                title="Utforska demo (Familjen Baard)"
+                variant="ghost"
+                size="sm"
+                onPress={() => {
+                  signInDemo();
+                }}
                 className="w-full"
               />
             </Card>

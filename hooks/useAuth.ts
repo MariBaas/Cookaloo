@@ -1,4 +1,4 @@
-import { useEffect, useState, useCallback, useSyncExternalStore } from 'react';
+import { useEffect, useCallback, useSyncExternalStore } from 'react';
 import { supabase } from '@/services/supabase';
 import type { Database } from '@/services/database.types';
 import type { Session, User } from '@supabase/supabase-js';
@@ -150,13 +150,49 @@ export function useAuth() {
     if (error) throw error;
   }, []);
 
+  const signInDemo = useCallback(() => {
+    authState = {
+      session: null,
+      user: { id: 'demo-user-123', email: 'maria@baard.se' } as any,
+      profile: {
+        user_id: 'demo-user-123',
+        display_name: 'Maria Baard',
+        ui_language: 'sv',
+        unit_system: 'metric',
+        active_household_id: 'demo-household-123',
+        created_at: new Date().toISOString(),
+        updated_at: new Date().toISOString(),
+      },
+      household: {
+        id: 'demo-household-123',
+        name: 'Familjen Baard',
+        plan: 'free',
+        created_by: 'demo-user-123',
+        created_at: new Date().toISOString(),
+        updated_at: new Date().toISOString(),
+      },
+      loading: false,
+      initialized: true,
+    };
+    emitChange();
+  }, []);
+
   const signOut = useCallback(async () => {
+    authState = {
+      session: null,
+      user: null,
+      profile: null,
+      household: null,
+      loading: false,
+      initialized: true,
+    };
+    emitChange();
     const { error } = await supabase.auth.signOut();
-    if (error) throw error;
+    if (error) console.warn('Supabase signout warning:', error);
   }, []);
 
   const refreshProfile = useCallback(async () => {
-    if (state.user) {
+    if (state.user && state.user.id !== 'demo-user-123') {
       await fetchUserData(state.user);
     }
   }, [state.user]);
@@ -165,6 +201,7 @@ export function useAuth() {
     ...state,
     signInWithGoogle,
     signInWithOtp,
+    signInDemo,
     signOut,
     refreshProfile,
   };
