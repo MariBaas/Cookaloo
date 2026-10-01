@@ -8,8 +8,8 @@ export default function TabLayout() {
       screenOptions={{
         headerShown: false,
         tabBarStyle: {
-          backgroundColor: "var(--surface)",
-          borderTopColor: "var(--line)",
+          backgroundColor: '#FFFDF9',
+          borderTopColor: '#E6DCCF',
           height: 80,
           paddingBottom: 24,
           paddingTop: 8,

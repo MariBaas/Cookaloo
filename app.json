@@ -24,7 +24,15 @@
     "web": {
       "bundler": "metro",
       "output": "static",
-      "favicon": "./assets/favicon.png"
+      "favicon": "./assets/favicon.png",
+      "themeColor": "#B4472A",
+      "backgroundColor": "#F6F1E9",
+      "name": "Cookaloo",
+      "shortName": "Cookaloo",
+      "description": "Familjens samlade recept & måltider",
+      "display": "standalone",
+      "orientation": "portrait",
+      "lang": "sv-SE"
     },
     "plugins": [
       "expo-router",
